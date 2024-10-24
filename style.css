@@ -2,17 +2,21 @@
     font-family: MyFont;
     src: url(./assets/fonts/Roboto-Regular.ttf);
 }
-*{
+
+* {
     box-sizing: border-box;
 }
-body{
+
+body {
     font-family: MyFont;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     background-color: hsl(234, 29%, 20%);
+    margin: 0;
 }
+
 .card {
     display: flex;
     width: 700px;
@@ -20,39 +24,68 @@ body{
     padding: 30px;
     border-radius: 20px;
 }
+
 .right {
     width: 60%;
 }
+
 .left {
     width: 40%;
 }
+
 .left img {
     width: 100%;
 }
-ul{
+
+ul {
     list-style-image: url(./assets/images/icon-success.svg);
-    /*width:30px;*/
-    /*list-style-position:  ;*/
 }
-li{
+
+li {
     margin-bottom: 10px;
 }
-form{
+
+form {
     display: flex;
     flex-direction: column;
     width: 300px;
 }
-label{
+
+.label-container {
+    display: flex;
+    justify-content: space-between;
     margin-bottom: 10px;
 }
-input{
-    padding: 10px 20px;
+
+label {
+    font-size: 14px;
+    font-weight: bold;
+    color: hsl(234, 29%, 20%);
+}
+
+.error-message {
+    font-size: 14px;
+    color: hsl(4, 100%, 67%);
+    display: none;
+}
+
+input {
+    padding: 15px 20px;
     font-family: inherit;
     border-radius: 5px;
     outline: none;
     border: 1px solid hsl(231, 7%, 60%);
+    font-size: 16px;
 }
-button{
+
+/* Error state styles */
+input.error {
+    border: 1px solid hsl(4, 100%, 67%);
+    background-color: hsla(4, 100%, 67%, 0.1);
+    color: hsl(4, 100%, 67%);
+}
+
+button {
     font-family: inherit;
     margin-top: 20px;
     padding: 15px 20px;
@@ -61,26 +94,70 @@ button{
     outline: none;
     color: white;
     background-color: hsl(235, 18%, 26%);
+    cursor: pointer;
+    font-weight: bold;
+}
 
+button:hover {
+    background-color: hsl(4, 100%, 67%);
+    transition: all 0.3s;
+    box-shadow: 0 5px 15px hsla(4, 100%, 67%, 0.5);
 }
-h1{
+
+h1 {
     font-size: 50px;
+    margin-bottom: 20px;
 }
+
 .hide {
     display: none;
 }
-.card-2{
+
+.card-2 {
     background-color: white;
     width: 400px;
-    padding: 20px;
-    border-radius: 5px;
+    padding: 40px;
+    border-radius: 20px;
 }
-.card-2 h1{
+
+.card-2 h1 {
     font-size: 40px;
 }
-.icon-card-2 {
-    width: 50px;
-}
-.card-2 button{
+
+.card-2 button {
     width: 100%;
+}
+
+@media (max-width: 768px) {
+    .card {
+        flex-direction: column-reverse;
+        width: 95%;
+        padding: 0;
+    }
+    
+    .card h1 {
+        font-size: 30px;
+    }
+    
+    .right {
+        width: 100%;
+        padding: 20px;
+    }
+    
+    .left {
+        width: 100%;
+    }
+    
+    .left img {
+        content: url(./assets/images/illustration-sign-up-mobile.svg);
+    }
+    
+    form {
+        width: 100%;
+    }
+    
+    .card-2 {
+        min-height: 100vh;
+        border-radius: 0;
+    }
 }
