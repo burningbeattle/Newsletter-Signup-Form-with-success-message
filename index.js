@@ -15,7 +15,7 @@ const form = document.querySelector('#newsletter-form');
             const email = emailInput.value;
 
             if (!validateEmail(email)) {
-                emailInput.classList.add('error');
+                emailInput.classList.add('error-message');
                 errorMessage.style.display = 'block';
                 return;
             }
@@ -26,7 +26,7 @@ const form = document.querySelector('#newsletter-form');
         });
 
         emailInput.addEventListener('input', () => {
-            emailInput.classList.remove('error');
+            emailInput.classList.remove('error-message');
             errorMessage.style.display = 'none';
         });
 
