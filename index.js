@@ -5,7 +5,7 @@ const form = document.querySelector('#newsletter-form');
         const card2 = document.querySelector('.card-2');
         const confirmedEmail = document.querySelector('#confirmed-email');
         const dismissBtn = document.querySelector('#dismiss-btn');
-
+        errorMessage.style.display="none"
         function validateEmail(email) {
             return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
         }
@@ -16,6 +16,7 @@ const form = document.querySelector('#newsletter-form');
 
             if (!validateEmail(email)) {
                 emailInput.classList.add('error-message');
+                     errorMessage.style.display="block" ;
                 errorMessage.style.display = 'block';
                 return;
             }
