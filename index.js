@@ -27,7 +27,6 @@ const form = document.querySelector('#newsletter-form');
         });
 
         emailInput.addEventListener('input', () => {
-            emailInput.classList.remove('error-message');
             errorMessage.style.display = 'none';
         });
 
