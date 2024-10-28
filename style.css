@@ -66,7 +66,7 @@ label {
 .error-message {
     font-size: 14px;
     color: hsl(4, 100%, 67%);
-    display: none;
+      box-shadow:0 0 1rem red;
 }
 
 input {
